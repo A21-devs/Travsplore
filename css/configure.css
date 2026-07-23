@@ -1,0 +1,396 @@
+/* configure tab styles, legible in light and dark */
+
+#tab-configure {
+  --c-bg: var(--bg, #f5f8f9);
+  --c-surface: var(--surface, #ffffff);
+  --c-surface-2: var(--surface-2, #eef3f4);
+  --c-border: var(--border, #d7e0e2);
+  --c-text: var(--text, #16232a);
+  --c-dim: var(--text-dim, #5a6b73);
+  --c-brand: var(--brand, #159b7e);
+  --c-brand-soft: var(--brand-soft, #e2f3ee);
+  --c-brand-ring: var(--brand-ring, rgba(21, 155, 126, 0.35));
+  --c-danger: var(--danger, #c23b2c);
+  --c-good: var(--good, #159b7e);
+  --c-radius: var(--radius-lg, 12px);
+  --c-radius-sm: var(--radius-sm, 8px);
+  --c-shadow: var(--shadow-sm, 0 1px 2px rgba(20, 40, 45, 0.08));
+}
+
+html[data-theme="dark"] #tab-configure {
+  --c-bg: var(--bg, #0d1518);
+  --c-surface: var(--surface, #141d21);
+  --c-surface-2: var(--surface-2, #1b262b);
+  --c-border: var(--border, #27353b);
+  --c-text: var(--text, #e6eef0);
+  --c-dim: var(--text-dim, #93a4ac);
+  --c-brand: var(--brand, #2fbf9c);
+  --c-brand-soft: var(--brand-soft, #13322b);
+  --c-brand-ring: var(--brand-ring, rgba(47, 191, 156, 0.4));
+  --c-danger: var(--danger, #ff7264);
+  --c-good: var(--good, #45c9a6);
+  --c-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.cfg {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 56px;
+  color: var(--c-text);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* section shell */
+.cfg-section {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius);
+  box-shadow: var(--c-shadow);
+  padding: 20px;
+}
+
+.cfg-section-head {
+  margin-bottom: 16px;
+}
+
+.cfg-section-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.cfg-section-sub {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--c-dim);
+}
+
+/* segmented picker */
+.cfg-seg {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  margin-bottom: 14px;
+}
+
+.cfg-seg-sm {
+  margin-bottom: 0;
+}
+
+.cfg-seg-btn {
+  border: none;
+  background: none;
+  color: var(--c-dim);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  padding: 6px 16px;
+  border-radius: calc(var(--c-radius-sm) - 2px);
+  cursor: pointer;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.cfg-seg-btn:hover {
+  color: var(--c-text);
+}
+.cfg-seg-btn.is-active {
+  background: var(--c-surface);
+  color: var(--c-brand);
+  box-shadow: var(--c-shadow);
+}
+
+/* provider block */
+.cfg-provider {
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  padding: 14px;
+  margin-bottom: 12px;
+  background: var(--c-bg);
+}
+.cfg-provider.is-active {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 1px var(--c-brand-ring);
+  background: var(--c-surface);
+}
+
+.cfg-provider-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.cfg-provider-name {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.cfg-active-badge {
+  display: none;
+  font-size: 10.5px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-brand);
+  background: var(--c-brand-soft);
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+.cfg-provider.is-active .cfg-active-badge {
+  display: inline-block;
+}
+
+/* fields */
+.cfg-field {
+  display: block;
+  margin-top: 12px;
+}
+.cfg-field:first-child {
+  margin-top: 0;
+}
+.cfg-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--c-dim);
+  margin-bottom: 6px;
+}
+
+.cfg-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13px;
+  color: var(--c-text);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  padding: 9px 11px;
+  transition: border-color 0.14s ease, box-shadow 0.14s ease;
+}
+.cfg-input::placeholder {
+  color: var(--c-dim);
+  opacity: 0.7;
+}
+.cfg-input:focus {
+  outline: none;
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-ring);
+}
+.cfg-textarea {
+  resize: vertical;
+  min-height: 66px;
+  line-height: 1.5;
+}
+
+.cfg-key-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.cfg-key-row .cfg-input {
+  flex: 1 1 auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+
+/* multi-key list + add-key button */
+.cfg-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 4px;
+}
+.cfg-keys-empty {
+  font-size: 12.5px;
+  color: var(--muted, #5b6b7a);
+}
+.cfg-key-add {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  margin-top: 9px;
+}
+.cfg-key-add .cfg-input {
+  flex: 1 1 auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+.cfg-key-add-btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.cfg-eye {
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--c-dim);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  padding: 0 12px;
+  cursor: pointer;
+  transition: color 0.14s ease, border-color 0.14s ease;
+}
+.cfg-eye:hover {
+  color: var(--c-text);
+  border-color: var(--c-brand);
+}
+
+/* test connection */
+.cfg-test-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.cfg-test-out {
+  font-size: 12.5px;
+  color: var(--c-dim);
+}
+.cfg-test-out.is-wait {
+  color: var(--c-dim);
+}
+.cfg-test-out.is-good {
+  color: var(--c-good);
+  font-weight: 550;
+}
+.cfg-test-out.is-bad {
+  color: var(--c-danger);
+  font-weight: 550;
+}
+
+/* buttons */
+.cfg-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--c-text);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background 0.14s ease, color 0.14s ease, transform 0.08s ease;
+}
+.cfg-btn:hover:not(:disabled) {
+  border-color: var(--c-brand);
+  color: var(--c-brand);
+}
+.cfg-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.cfg-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.cfg-btn-primary {
+  color: #fff;
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+}
+.cfg-btn-primary:hover:not(:disabled) {
+  color: #fff;
+  filter: brightness(1.06);
+}
+.cfg-btn-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cfg-btn-sm { padding: 6px 12px; font-size: 12.5px; }
+.cfg-btn-danger { color: var(--c-danger); border-color: var(--c-danger); }
+.cfg-btn-danger:hover:not(:disabled) { background: var(--c-danger); color: #fff; }
+
+/* saved places list */
+.cfg-places {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cfg-place-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+}
+.cfg-place-name {
+  font-size: 13px;
+  color: var(--c-text);
+}
+
+.cfg-note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--c-dim);
+}
+
+/* tag inputs */
+.cfg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 8px;
+  min-height: 40px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius-sm);
+  cursor: text;
+  transition: border-color 0.14s ease, box-shadow 0.14s ease;
+}
+.cfg-tags:focus-within {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-ring);
+}
+.cfg-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--c-brand);
+  background: var(--c-brand-soft);
+  border-radius: 20px;
+  padding: 3px 5px 3px 10px;
+  white-space: nowrap;
+}
+.cfg-tag-x {
+  border: none;
+  background: none;
+  color: var(--c-brand);
+  font-size: 15px;
+  line-height: 1;
+  padding: 0 2px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.cfg-tag-x:hover {
+  opacity: 1;
+}
+.cfg-tag-input {
+  flex: 1 1 90px;
+  min-width: 90px;
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+  color: var(--c-text);
+  padding: 3px 2px;
+}
+.cfg-tag-input::placeholder {
+  color: var(--c-dim);
+  opacity: 0.7;
+}

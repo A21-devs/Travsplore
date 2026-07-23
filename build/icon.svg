@@ -1,0 +1,35 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3aa0dc"/>
+      <stop offset="0.55" stop-color="#2597c0"/>
+      <stop offset="1" stop-color="#0f9576"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="150" y1="150" x2="214" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22b98e"/>
+      <stop offset="1" stop-color="#0c7d5f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded app tile -->
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="url(#sky)"/>
+
+  <!-- the arc the plane flies along -->
+  <path d="M40 78 C 96 66, 150 92, 196 150" stroke="#ffffff" stroke-opacity="0.55"
+        stroke-width="5" stroke-linecap="round" stroke-dasharray="3 15" fill="none"/>
+
+  <!-- paper plane -->
+  <g>
+    <path d="M58 96 L150 62 L112 150 L96 118 Z" fill="#ffffff"/>
+    <path d="M96 118 L112 150 L118 120 Z" fill="#dbeef6"/>
+  </g>
+
+  <!-- a bold canopy leaf it flies into -->
+  <g>
+    <path d="M196 128 C 150 132, 132 178, 150 214 C 190 200, 214 168, 196 128 Z" fill="url(#leaf)"/>
+    <path d="M182 150 C 172 172, 162 192, 154 208" stroke="#ffffff" stroke-opacity="0.7"
+          stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M176 164 l 10 -4 M168 180 l 11 -3" stroke="#ffffff" stroke-opacity="0.55"
+          stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

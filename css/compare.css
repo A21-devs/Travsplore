@@ -1,0 +1,398 @@
+/* this is the compare tab styling — matches the travel/explore kit, sky-blue to rainforest-green */
+
+.cmp-header {
+  max-width: 900px;
+  margin: 0 auto 14px;
+}
+.cmp-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.cmp-sub {
+  margin: 0;
+  color: var(--muted, #5b6b7a);
+  font-size: 13.5px;
+}
+
+.cmp-note {
+  max-width: 900px;
+  margin: 0 auto 14px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--muted, #5b6b7a);
+  background: var(--panel-soft, rgba(59, 155, 214, 0.06));
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 10px;
+}
+
+/* builder card */
+.cmp-card {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 14px;
+}
+.cmp-h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+/* the working item list */
+.cmp-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cmp-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted, #5b6b7a);
+}
+.cmp-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 11px;
+  background: var(--panel-soft, rgba(59, 155, 214, 0.05));
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 10px;
+}
+.cmp-item-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+.cmp-item-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--fg, #16232e);
+}
+.cmp-item-sub {
+  font-size: 12px;
+  color: var(--muted, #5b6b7a);
+}
+.cmp-badge {
+  padding: 2px 9px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent, #2f9e8f);
+  background: var(--brand-soft, #e2f3ee);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* small remove / delete button */
+.cmp-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  color: var(--muted, #5b6b7a);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.cmp-x:hover {
+  color: var(--danger, #b23b3b);
+  background: var(--danger-soft, rgba(178, 59, 59, 0.08));
+  border-color: var(--danger-soft, rgba(178, 59, 59, 0.25));
+}
+
+.cmp-addrow {
+  display: flex;
+  gap: 10px;
+}
+
+/* custom item entry */
+.cmp-custom {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1.4fr auto;
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .cmp-custom { grid-template-columns: 1fr; }
+}
+
+.cmp-origin {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.cmp-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted, #5b6b7a);
+}
+
+.cmp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 11px;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--fg, #16232e);
+  background: var(--field-bg, #fff);
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.cmp-input:focus {
+  border-color: var(--accent, #2f9e8f);
+  box-shadow: 0 0 0 3px var(--accent-soft, rgba(47, 158, 143, 0.16));
+}
+.cmp-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.cmp-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* buttons */
+.cmp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: filter 0.15s, background 0.15s, border-color 0.15s;
+}
+.cmp-btn-primary {
+  color: #fff;
+  background: linear-gradient(120deg, var(--sky, #3b9bd6), var(--accent, #2f9e8f));
+}
+.cmp-btn-primary:hover { filter: brightness(1.05); }
+.cmp-btn-primary:disabled { opacity: 0.6; cursor: default; filter: none; }
+.cmp-btn-ghost {
+  color: var(--accent, #2f9e8f);
+  background: transparent;
+  border-color: var(--border, #d9e1e8);
+}
+.cmp-btn-ghost:hover { background: var(--chip-bg, #eef3f6); }
+.cmp-btn-ghost:disabled { color: var(--muted, #5b6b7a); cursor: default; background: transparent; }
+
+/* add-from-saved picker */
+.cmp-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cmp-pick-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 11px;
+  font: inherit;
+  text-align: left;
+  color: var(--fg, #16232e);
+  background: var(--field-bg, #fff);
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.cmp-pick-row:hover {
+  border-color: var(--accent, #2f9e8f);
+  background: var(--chip-bg, #eef3f6);
+}
+
+/* result area */
+.cmp-result {
+  max-width: 900px;
+  margin: 20px auto 0;
+}
+.cmp-error {
+  margin: 0;
+  padding: 11px 13px;
+  font-size: 13px;
+  color: var(--danger, #b23b3b);
+  background: var(--danger-soft, rgba(178, 59, 59, 0.08));
+  border: 1px solid var(--danger-soft, rgba(178, 59, 59, 0.25));
+  border-radius: 10px;
+}
+
+/* the matrix scrolls inside its own container, never the app body */
+.cmp-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+}
+.cmp-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 13px;
+}
+.cmp-table th,
+.cmp-table td {
+  padding: 10px 13px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border, #d9e1e8);
+  border-right: 1px solid var(--border, #d9e1e8);
+}
+.cmp-table tr:last-child th,
+.cmp-table tr:last-child td {
+  border-bottom: none;
+}
+.cmp-table th:last-child,
+.cmp-table td:last-child {
+  border-right: none;
+}
+
+.cmp-corner {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted, #5b6b7a);
+  background: var(--panel-soft, rgba(59, 155, 214, 0.05));
+}
+.cmp-head {
+  background: var(--panel-soft, rgba(59, 155, 214, 0.05));
+}
+.cmp-head-name {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--fg, #16232e);
+}
+.cmp-head-type {
+  display: block;
+  margin-top: 2px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted, #5b6b7a);
+}
+.cmp-rowh {
+  font-weight: 600;
+  color: var(--muted, #5b6b7a);
+  white-space: nowrap;
+}
+.cmp-cell {
+  color: var(--fg, #16232e);
+}
+.cmp-pros .cmp-rowh { color: var(--accent, #2f9e8f); }
+.cmp-pros .cmp-cell { color: var(--accent, #2f9e8f); }
+.cmp-cons .cmp-rowh { color: var(--danger, #b23b3b); }
+.cmp-cons .cmp-cell { color: var(--danger, #b23b3b); }
+
+/* the bottom-line pick banner */
+.cmp-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 14px;
+  padding: 13px 15px;
+  background: var(--brand-soft, #e2f3ee);
+  border: 1px solid var(--accent-soft, rgba(47, 158, 143, 0.3));
+  border-radius: 12px;
+}
+.cmp-pick-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent, #2f9e8f);
+}
+.cmp-pick-text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--fg, #16232e);
+}
+
+.cmp-result-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* saved comparisons */
+.cmp-saved {
+  max-width: 900px;
+  margin: 26px auto 0;
+}
+.cmp-saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+.cmp-saved-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 4px 4px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #d9e1e8);
+  border-radius: 10px;
+}
+.cmp-saved-open {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  font: inherit;
+  text-align: left;
+  color: var(--fg, #16232e);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cmp-saved-open:hover {
+  background: var(--chip-bg, #eef3f6);
+}
+
+/* dark theme fallbacks — only used if the shared vars are absent */
+html[data-theme="dark"] .cmp-input,
+html[data-theme="dark"] .cmp-pick-row {
+  color: var(--fg, #e7eef3);
+  background: var(--field-bg, #16222c);
+  border-color: var(--border, #293945);
+}
+html[data-theme="dark"] .cmp-card,
+html[data-theme="dark"] .cmp-scroll,
+html[data-theme="dark"] .cmp-saved-row {
+  background: var(--card-bg, #16222c);
+  border-color: var(--border, #293945);
+}
+html[data-theme="dark"] .cmp-table th,
+html[data-theme="dark"] .cmp-table td {
+  border-color: var(--border, #293945);
+}
+html[data-theme="dark"] .cmp-badge {
+  color: var(--accent, #7fe0c8);
+  background: var(--brand-soft, #143029);
+}

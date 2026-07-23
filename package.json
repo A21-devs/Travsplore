@@ -1,0 +1,50 @@
+{
+  "name": "travsplore",
+  "productName": "Travsplore",
+  "version": "1.0.0",
+  "description": "AI travel planning desktop app",
+  "main": "main.js",
+  "author": "Ari Ratner",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "dev.ariratner.travsplore",
+    "productName": "Travsplore",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "css/**/*",
+      "js/**/*",
+      "build/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["universal"] },
+        { "target": "zip", "arch": ["universal"] }
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.travel",
+      "identity": null,
+      "hardenedRuntime": false
+    }
+  }
+}
